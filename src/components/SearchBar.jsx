@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import iconimage from '../images/icon-arrow.svg'
-export const SearchBar = ({setipAddress,fetchLocation}) => {
+import { useIpContext } from "./IpContext";
+export const SearchBar = () => {
+
+    const {setipAddress,fetchLocation}= useIpContext();
+
     const [ipAddress, setipAdress] = useState('123.123.123.123');
     const handlesearch=()=>{
 
@@ -8,7 +12,7 @@ export const SearchBar = ({setipAddress,fetchLocation}) => {
         console.log(validip);
         for (let index = 0; index < validip.length; index++) {
             const element = parseInt(validip[index]);
-            // console.log(element)
+            // console.log(element)coordinates
             if(element>=256 || element <=0){
                 alert("Invalid Ip Address");
                 return;

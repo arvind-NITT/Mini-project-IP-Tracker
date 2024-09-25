@@ -1,6 +1,7 @@
 import React from 'react'
-
-export const Stats = ({IPAddress,location,timezone,isp}) => {
+import { useIpContext } from "./IpContext";
+export const Stats = () => {
+    const {IPAddress,Location,Timezone,Isp}= useIpContext();
   return (
     <div className='w-4/5 rounded-lg absolute top-52 md:top-56 left-10 
     md:left-40 bg-white z-10 flex flex-col sm:flex-row container 
@@ -22,7 +23,7 @@ export const Stats = ({IPAddress,location,timezone,isp}) => {
             Location
             </p>
             <p className='md:text-2xl text-black font-bold'>
-            {location}
+            {Location}
             </p>
 
         </div>
@@ -32,7 +33,7 @@ export const Stats = ({IPAddress,location,timezone,isp}) => {
             Timezone
             </p>
             <p className='md:text-2xl text-black font-bold'>
-            {timezone}
+            {Timezone}
             </p>
 
         </div>
@@ -42,7 +43,7 @@ export const Stats = ({IPAddress,location,timezone,isp}) => {
             ISP
             </p>
             <p className='md:text-2xl text-black font-bold'>
-            {isp}
+            {Isp}
             </p>
 
         </div>
