@@ -9,17 +9,18 @@ export const SearchBar = () => {
     const handlesearch=()=>{
 
         var validip = ipAddress.split('.');
-        console.log(validip);
-        for (let index = 0; index < validip.length; index++) {
-            const element = parseInt(validip[index]);
-            // console.log(element)coordinates
-            if(element>=256 || element <=0){
-                alert("Invalid Ip Address");
+        for (let index = 0; index < validip.length; index++) {  
+            validip[index] = parseInt(validip[index], 10).toString();
+            const element = parseInt(validip[index], 10);
+            if (element >= 256 || element <= 0) {
+                alert("Invalid IP Address");
                 return;
-            }   
+            }
         }
-      setipAddress(ipAddress);
-      fetchLocation(ipAddress);
+        const cleanedIpAddress = validip.join('.');
+
+      setipAddress(cleanedIpAddress);
+      fetchLocation(cleanedIpAddress);
     }
     
   return (
