@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+// import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+jest.mock("react-leaflet");
 
-test('renders learn react link', () => {
+// Example test case
+test('First Test case - Check IP Address is rendered', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+
+  const ipElement = screen.getByText('IP Address'); // If using data-testid attribute
+
+  expect(ipElement).toBeInTheDocument();
 });

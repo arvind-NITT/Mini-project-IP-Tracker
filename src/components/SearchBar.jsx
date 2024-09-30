@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import iconimage from '../images/icon-arrow.svg'
 import { useIpContext } from "./IpContext";
-export const SearchBar = () => {
+export const SearchBar = () => { 
 
     const {setipAddress,fetchLocation}= useIpContext();
 
@@ -14,7 +14,7 @@ export const SearchBar = () => {
             const element = parseInt(validip[index], 10);
             if (element >= 256 || element <= 0) {
                 alert("Invalid IP Address");
-                return;
+                return; 
             }
         }
         const cleanedIpAddress = validip.join('.');
@@ -34,7 +34,7 @@ export const SearchBar = () => {
         placeholder='Enter the IP Address here...'/>
         <div className='bg-black w-14 h-full flex justify-center items-center' onClick={handlesearch}>
 
-        <img src={iconimage} alt="Arrow-icon" srcset="" className='px-3 py-2' />
+        <img src={iconimage} alt="Arrow-icon" srcSet="" className='px-3 py-2' />
         </div>
 
 

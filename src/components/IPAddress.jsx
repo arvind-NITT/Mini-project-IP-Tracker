@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { SearchBar } from './SearchBar'
 import { Stats } from './Stats'
-import Map from './Map';
+import {Map} from './Map';
 import { useIpContext } from "./IpContext";
 
 export const IPAddress = () => {
@@ -15,7 +15,7 @@ export const IPAddress = () => {
 
 
   return (
-    <div className='flex flex-col h-screen relative'>
+    <div data-testid="ip-address" className='flex flex-col h-screen relative'>
      
         <SearchBar />
         <Stats />

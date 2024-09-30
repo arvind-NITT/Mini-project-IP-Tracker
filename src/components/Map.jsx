@@ -1,13 +1,14 @@
 import React from 'react'
 import "leaflet/dist/leaflet.css";
-import L from 'leaflet';
-import markericon from '../images/icon-location.svg';
+// import L from 'leaflet';
+// import markericon from '../images/icon-location.svg';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import { useIpContext } from "./IpContext";
 
-const Map = () => {
+
+export const Map = () => {
     const {coordinates}= useIpContext();
-    const marker = new L.icon({iconUrl:markericon});
+    // const marker = new L.icon({iconUrl:markericon});
     let state = {
         keyMAP : Math.random(),
     };
@@ -24,14 +25,13 @@ const Map = () => {
       url="https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}"
     >
 
-      <Marker
+      {/* <Marker
         position={[coordinates.lat, coordinates.lng]}
         icon={marker}
-      ></Marker>
+      ></Marker> */}
 
     </TileLayer>
   </MapContainer>
   )
 }
 
-export default Map
