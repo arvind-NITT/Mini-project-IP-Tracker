@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { SearchBar } from './SearchBar'
 import { Stats } from './Stats'
 import Map from './Map';
@@ -11,7 +11,7 @@ export const IPAddress = () => {
   
  useEffect(()=>{
   fetchLocation();
- },[]);
+ },);
 
 
   return (
